@@ -1,0 +1,14 @@
+Release/
+ipch/
+x86/
+Debug/
+ARM/
+packages/
+*.chm
+bin/
+obj/
+.vs/
+*.suo
+*.dll
+*.csproj.user
+

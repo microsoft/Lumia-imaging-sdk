@@ -1,0 +1,83 @@
+﻿<Page
+    x:Class="ImageSequencer.SequencesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ImageSequencer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Margin="24,17,0,8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0, 0, 0, 24">
+            <TextBlock Text="IMAGE SEQUENCER" Style="{ThemeResource TitleTextBlockStyle}"
+                       Typography.Capitals="SmallCaps"/>
+        </StackPanel>
+        
+        <ScrollViewer Grid.Row="1">
+            <StackPanel>
+                <TextBlock Text="example sequences" Style="{ThemeResource SubheaderTextBlockStyle}"></TextBlock>
+                <ItemsControl ItemsSource="{Binding Sequences}" Visibility="Visible">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapGrid Orientation="Horizontal"  ItemWidth="180" ItemHeight="160"></WrapGrid>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button BorderThickness="0" Click="Example_Click" Padding="8">
+                                <Button.Content>
+                                    <Image Source="{Binding}" CacheMode="BitmapCache"/>
+                                </Button.Content>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <TextBlock Text="saved animated gifs" Style="{ThemeResource SubheaderTextBlockStyle}"></TextBlock>
+
+                <ItemsControl ItemsSource="{Binding Gifs}" Visibility="Visible">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapGrid Orientation="Horizontal"  ItemWidth="180" ItemHeight="190"></WrapGrid>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button BorderThickness="0" Click="Thumbnail_Click" Padding="8">
+                                <Button.Content>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="130"/>
+                                            <RowDefinition Height="25"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Grid.Row="0" Source="{Binding BitmapImage}" CacheMode="BitmapCache"/>
+                                        <TextBlock Grid.Row="1" VerticalAlignment="Bottom" Text="{Binding FileName}" Margin="0,6,0,0"></TextBlock>
+                                    </Grid>
+                                </Button.Content>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <TextBlock x:Name="noGifFilesTextBlock" Grid.Row="2" Text="No GIF files" Style="{ThemeResource BaseTextBlockStyle}" Margin="8,12,0,0" Visibility="Collapsed"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Icon="Camera" Label="Capture" Click="Capture_Click"/>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton x:Name="AboutButton" Label="About" Icon="Help" Click="About_Click"/>
+            </CommandBar.SecondaryCommands>            
+        </CommandBar>
+    </Page.BottomAppBar>
+
+</Page>

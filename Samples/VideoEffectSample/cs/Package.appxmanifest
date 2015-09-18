@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+  <Identity Name="Lumia.Imaging.VideoEffectSample" Publisher="CN=Microsoft Mobile, O=Microsoft Corporation, L=Lund, C=SWE" Version="1.0.0.0" />
+  <mp:PhoneIdentity PhoneProductId="f1899935-1ec9-4197-849e-f9a293b45e69" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>Video Effect Sample</DisplayName>
+    <PublisherDisplayName>Microsoft Mobile</PublisherDisplayName>
+    <Logo>Assets\StoreLogo-sdk.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.1.0" MaxVersionTested="10.0.1.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="VideoEffectSample.App">
+      <uap:VisualElements DisplayName="VideoEffectSample" Square150x150Logo="Assets\StoreLogo-sdk.png" Square44x44Logo="Assets\SmallTile-sdk.png" Description="UniversalCameraSample" BackgroundColor="#00b2f0">
+        <uap:SplashScreen Image="Assets\Splash-sdk.png" BackgroundColor="#00B2F0" />
+        <uap:DefaultTile>
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+  <Extensions>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>Lumia.Imaging.dll</Path>
+        <ActivatableClass ActivatableClassId="Lumia.Imaging.VideoEffect" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+  </Extensions>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <uap:Capability Name="picturesLibrary" />
+    <uap:Capability Name="videosLibrary" />
+    <DeviceCapability Name="webcam" />
+    <DeviceCapability Name="microphone" />
+  </Capabilities>
+</Package>

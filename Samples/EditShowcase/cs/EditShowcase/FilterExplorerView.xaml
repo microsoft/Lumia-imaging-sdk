@@ -1,0 +1,115 @@
+﻿<Page
+    x:Class="Lumia.Imaging.EditShowcase.Views.FilterExplorerView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lumia.Imaging.EditShowcase.Views"
+    xmlns:common="using:Lumia.Imaging.EditShowcase"
+	xmlns:actions="using:Lumia.Imaging.EditShowcase.Actions"    
+    xmlns:converters="using:Lumia.Imaging.EditShowcase.Converters"
+    xmlns:views="using:Lumia.Imaging.EditShowcase.Views" 
+	xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" 
+	xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:properties="using:Lumia.Imaging.EditShowcase.AttachedProperties"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <common:FilterEditorTemplateSelector x:Key="FilterEditorTemplateSelector"/>
+        <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <DataTemplate x:Key="FilterDataTemplate">
+            <Grid d:DesignWidth="173.333" d:DesignHeight="173.333">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="142*"/>
+                    <RowDefinition Height="31*"/>
+                </Grid.RowDefinitions>
+                <Image Margin="0" Source="{Binding ThumbnailImagSource}"/>
+                <TextBlock 
+					TextWrapping="Wrap" 
+					Foreground="White"
+					Text="{Binding Name}" 
+					HorizontalAlignment="Center" 
+					VerticalAlignment="Center" 
+					Grid.Row="1"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="FilterCategoryDataTemplate">
+            <Grid d:DesignWidth="173.333" d:DesignHeight="173.333">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image HorizontalAlignment="Center" Source="ms-appx:///Icons/check.png" Visibility="{Binding IsSelected, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="10" FontSize="30" Text="{Binding Name}" />
+            </Grid>
+        </DataTemplate>
+
+    </Page.Resources>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Label="Browse" Icon="Folder" Command="{Binding BrowseForImageCommand}"/>
+            <AppBarButton Label="Save" Icon="Save" Command="{Binding SaveCommand}"/>
+            <AppBarButton Label="Restore" Icon="Refresh" Command="{Binding RestoreDefaultCommand}"/>
+            <AppBarButton Label="Filter" >
+                <AppBarButton.Icon>
+                    <BitmapIcon UriSource="ms-appx:///Icons/appbar_filter.png"/>
+                </AppBarButton.Icon>
+                <FlyoutBase.AttachedFlyout>
+                    <Flyout Placement="Right" >
+                        <ListView  ItemsSource="{Binding FilterCategories}" SelectedItem="{Binding SelectedFilterCategory, Mode=TwoWay}" ItemTemplate="{StaticResource FilterCategoryDataTemplate}"  VerticalAlignment="Center"/>
+                        <Interactivity:Interaction.Behaviors>
+                            <Core:DataTriggerBehavior Binding="{Binding IsFlyOutClosed}" ComparisonCondition="Equal" Value="True">
+                                <actions:CloseFlyoutAction />
+                            </Core:DataTriggerBehavior>
+                        </Interactivity:Interaction.Behaviors>
+                    </Flyout>
+                </FlyoutBase.AttachedFlyout>
+                <Interactivity:Interaction.Behaviors>
+                    <Core:EventTriggerBehavior EventName="Click">
+                        <actions:OpenFlyoutAction />
+                    </Core:EventTriggerBehavior>
+                </Interactivity:Interaction.Behaviors>
+            </AppBarButton>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="2*"/>            
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="255"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="m_OrginalImageTextBlock" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding SourceImageRenderMessage}" VerticalAlignment="Center" Grid.Column="1" FontSize="13.333" Grid.Row="1"/>
+        <Border
+            properties:FrameworkElementAttachedProperties.LoadedCommand="{Binding SourceImageLoadedCommand}"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Grid.Column="1" 
+            Grid.Row="2">
+            <Image 
+                x:Name="SourceImage"                
+                Source="{Binding SourceImageSource}" 
+                />
+        </Border>
+        <TextBlock x:Name="m_ResultText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding TargetImageRenderMessage}" VerticalAlignment="Center" Grid.Column="1" FontSize="13.333"  Grid.Row="3"/>
+
+        <SwapChainPanel  
+            properties:FrameworkElementAttachedProperties.LoadedCommand="{Binding TargetSwapChainPanelLoadedCommand}"           
+            Grid.Column="1" 
+            Grid.Row="4"  />
+
+        <ListBox x:Name="m_FiltersListBox" ItemTemplate="{StaticResource FilterDataTemplate}" IsEnabled="{Binding CanSelectNewEffect}" Visibility="Visible" SelectedItem="{Binding SelectedEffect, Mode=TwoWay}" ItemsSource="{Binding FilterEffects}" HorizontalAlignment="Left" Grid.RowSpan="5" Grid.Row="1" Style="{StaticResource FilterListBoxStyle}" ItemContainerStyle="{StaticResource FilterListBoxItemStyle}" Background="Transparent"/>
+        <ListBox x:Name="m_FilterEditorListBox" Grid.Column="2" Grid.RowSpan="3" ItemsSource="{Binding CurrentEditors}"  ItemTemplateSelector="{StaticResource FilterEditorTemplateSelector}" ItemContainerStyle="{StaticResource EditorListBoxItemStyle}" Style="{StaticResource ListBoxEditorStyle}" Grid.Row="3" />
+        <TextBlock x:Name="m_FilterDescription" Grid.Column="2" Grid.Row="2" FontSize="14" Text="{Binding FilterDescription}" />
+    </Grid>
+
+</Page>

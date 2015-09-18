@@ -1,0 +1,271 @@
+﻿<Page
+    x:Class="Lumia.Imaging.VideoEffectSample.Views.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lumia.Imaging.VideoEffectSample"
+    xmlns:properties="using:Lumia.Imaging.VideoEffectSample.AttachedProperties"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <Style x:Key="ListViewItemStyle1" TargetType="ListViewItem">
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+            <Setter Property="TabNavigation" Value="Local"/>
+            <Setter Property="IsHoldingEnabled" Value="True"/>
+            <Setter Property="Padding" Value="0,0,0,0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="MinWidth" Value="{ThemeResource ListViewItemMinWidth}"/>
+            <Setter Property="MinHeight" Value="{ThemeResource ListViewItemMinHeight}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListViewItem">
+                        <ListViewItemPresenter CheckBrush="{ThemeResource SystemControlForegroundBaseMediumHighBrush}" ContentMargin="{TemplateBinding Padding}" CheckMode="Inline" ContentTransitions="{TemplateBinding ContentTransitions}" CheckBoxBrush="{ThemeResource SystemControlForegroundBaseMediumHighBrush}" DragForeground="{ThemeResource ListViewItemDragForegroundThemeBrush}" DragOpacity="{ThemeResource ListViewItemDragThemeOpacity}" DragBackground="{ThemeResource ListViewItemDragBackgroundThemeBrush}" DisabledOpacity="{ThemeResource ListViewItemDisabledThemeOpacity}" FocusBorderBrush="{ThemeResource SystemControlForegroundAltHighBrush}" FocusSecondaryBorderBrush="{ThemeResource SystemControlForegroundBaseHighBrush}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" PointerOverForeground="{ThemeResource SystemControlHighlightAltBaseHighBrush}" PressedBackground="{ThemeResource SystemControlHighlightListMediumBrush}" PlaceholderBackground="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}" PointerOverBackground="{ThemeResource SystemControlHighlightListLowBrush}" ReorderHintOffset="{ThemeResource ListViewItemReorderHintThemeOffset}" SelectedPressedBackground="{ThemeResource SystemControlHighlightListAccentHighBrush}" SelectionCheckMarkVisualEnabled="True" SelectedForeground="{ThemeResource SystemControlHighlightAltBaseHighBrush}" SelectedPointerOverBackground="{ThemeResource SystemControlHighlightListAccentMediumBrush}" SelectedBackground="{ThemeResource SystemControlHighlightListAccentLowBrush}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <DataTemplate x:Key="GroupTemplate">
+            <Grid Margin="4" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="{Binding ImageSource}" Height="32" Width="32" Margin="0"/>
+                <TextBlock Grid.Row="1" MaxWidth="100" FontSize="10.667" Text="{Binding Name}" Style="{StaticResource TitleTextBlockStyle}" TextWrapping="NoWrap" HorizontalAlignment="Center" Foreground="White" Margin="2,0,2,0"/>
+
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="StaticEffectsTemplate">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="{Binding ImageSource}" />
+                <TextBlock Grid.Row="1" MaxWidth="90" FontSize="10.667" Text="{Binding Name}" Style="{StaticResource TitleTextBlockStyle}" TextWrapping="NoWrap" HorizontalAlignment="Center" Margin="2,0,2,0" Foreground="White"/>
+
+            </Grid>
+        </DataTemplate>
+        <ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
+            <ItemsStackPanel Orientation="Horizontal" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled" />
+        </ItemsPanelTemplate>
+        <Style x:Key="ListViewStyle1" TargetType="ListView">
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="TabNavigation" Value="Once"/>
+            <Setter Property="IsSwipeEnabled" Value="True"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="ScrollViewer.HorizontalScrollMode" Value="Auto"/>
+            <Setter Property="ScrollViewer.IsHorizontalRailEnabled" Value="True"/>
+            <Setter Property="ScrollViewer.VerticalScrollMode" Value="Disabled"/>
+            <Setter Property="ScrollViewer.IsVerticalRailEnabled" Value="False"/>
+            <Setter Property="ScrollViewer.ZoomMode" Value="Disabled"/>
+            <Setter Property="ScrollViewer.IsDeferredScrollingEnabled" Value="False"/>
+            <Setter Property="ScrollViewer.BringIntoViewOnFocusChange" Value="True"/>
+            <Setter Property="ItemContainerTransitions">
+                <Setter.Value>
+                    <TransitionCollection>
+                        <AddDeleteThemeTransition/>
+                        <ContentThemeTransition/>
+                        <ReorderThemeTransition/>
+                        <EntranceThemeTransition IsStaggeringEnabled="False"/>
+                    </TransitionCollection>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <ItemsStackPanel Orientation="Vertical"/>
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListView">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                            <ScrollViewer x:Name="ScrollViewer" AutomationProperties.AccessibilityView="Raw" BringIntoViewOnFocusChange="{TemplateBinding ScrollViewer.BringIntoViewOnFocusChange}" HorizontalScrollMode="{TemplateBinding ScrollViewer.HorizontalScrollMode}" HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" IsHorizontalRailEnabled="{TemplateBinding ScrollViewer.IsHorizontalRailEnabled}" IsHorizontalScrollChainingEnabled="{TemplateBinding ScrollViewer.IsHorizontalScrollChainingEnabled}" IsVerticalScrollChainingEnabled="{TemplateBinding ScrollViewer.IsVerticalScrollChainingEnabled}" IsVerticalRailEnabled="{TemplateBinding ScrollViewer.IsVerticalRailEnabled}" IsDeferredScrollingEnabled="{TemplateBinding ScrollViewer.IsDeferredScrollingEnabled}" TabNavigation="{TemplateBinding TabNavigation}" VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}" VerticalScrollMode="{TemplateBinding ScrollViewer.VerticalScrollMode}" ZoomMode="{TemplateBinding ScrollViewer.ZoomMode}">
+                                <ItemsPresenter FooterTransitions="{TemplateBinding FooterTransitions}" FooterTemplate="{TemplateBinding FooterTemplate}" Footer="{TemplateBinding Footer}" HeaderTemplate="{TemplateBinding HeaderTemplate}" Header="{TemplateBinding Header}" HeaderTransitions="{TemplateBinding HeaderTransitions}" Padding="{TemplateBinding Padding}"/>
+                            </ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Page.BottomAppBar>
+        <CommandBar >
+            <AppBarToggleButton Label="Edit" IsChecked="{Binding IsEditing, Mode=TwoWay}" >
+                <AppBarToggleButton.Icon>
+                    <BitmapIcon UriSource="ms-appx:///Icons/appbar_edit.png"/>
+                </AppBarToggleButton.Icon>
+            </AppBarToggleButton>
+            <AppBarToggleButton Label="Effects" IsChecked="{Binding IsStaticEffectVisible, Mode=TwoWay}" >
+                <AppBarToggleButton.Icon>
+                    <BitmapIcon UriSource="ms-appx:///Icons/appbar_effects.png"/>
+                </AppBarToggleButton.Icon>
+            </AppBarToggleButton>
+            <AppBarToggleButton Label="{Binding RecordingStateText}" IsChecked="{Binding IsRecording}" Command="{Binding StartStopRecordCommand}">
+                <AppBarToggleButton.Icon>
+                    <BitmapIcon UriSource="{Binding VideoRecordingIcon}"/>
+                </AppBarToggleButton.Icon>
+            </AppBarToggleButton>
+            <AppBarButton Label="Capture"  Command="{Binding CaptureCommand}">
+                <AppBarButton.Icon>
+                    <BitmapIcon UriSource="ms-appx:///Icons/feature.camera.png"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton Label="Toggle"  Command="{Binding ToggleCameraCommand}">
+                <AppBarButton.Icon>
+                    <BitmapIcon UriSource="ms-appx:///Icons/feature-switch.camera.png"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Interactivity:Interaction.Behaviors>
+            <Core:DataTriggerBehavior Binding="{Binding CurrentState}" Value="{Binding CurrentState}">
+                <Core:GoToStateAction StateName="{Binding CurrentState}" />
+            </Core:DataTriggerBehavior>
+        </Interactivity:Interaction.Behaviors>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="EditingVisualStateGroup">
+                <VisualStateGroup.Transitions>
+                    <VisualTransition GeneratedDuration="0" To="Editing">
+                        <VisualTransition.GeneratedEasingFunction>
+                            <QuarticEase EasingMode="EaseInOut"/>
+                        </VisualTransition.GeneratedEasingFunction>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.6" From="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="editingBorder"/>
+                        </Storyboard>
+                    </VisualTransition>
+                    <VisualTransition GeneratedDuration="0" To="Normal">
+                        <VisualTransition.GeneratedEasingFunction>
+                            <QuinticEase EasingMode="EaseInOut"/>
+                        </VisualTransition.GeneratedEasingFunction>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.6" From="1" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="editingBorder"/>
+                        </Storyboard>
+                    </VisualTransition>
+                </VisualStateGroup.Transitions>
+
+                <VisualState x:Name="Editing">
+                    <Storyboard>
+                        <DoubleAnimation Duration="0:0:0.6" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="editingBorder" d:IsOptimized="True"/>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Normal">
+                    <Storyboard>
+                        <DoubleAnimation Duration="0:0:0.6" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="editingBorder" d:IsOptimized="True"/>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+            <VisualStateGroup x:Name="StaticEditingVisualStateGroup">
+                <VisualStateGroup.Transitions>
+                    <VisualTransition GeneratedDuration="0" To="StaticEditing">
+                        <VisualTransition.GeneratedEasingFunction>
+                            <QuarticEase EasingMode="EaseInOut"/>
+                        </VisualTransition.GeneratedEasingFunction>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.6" From="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="staticEffectsBorder"/>
+                        </Storyboard>
+                    </VisualTransition>
+                    <VisualTransition GeneratedDuration="0" To="EndStaticEditing">
+                        <VisualTransition.GeneratedEasingFunction>
+                            <QuinticEase EasingMode="EaseInOut"/>
+                        </VisualTransition.GeneratedEasingFunction>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.6" From="1" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="staticEffectsBorder"/>
+                        </Storyboard>
+                    </VisualTransition>
+                </VisualStateGroup.Transitions>
+
+                <VisualState x:Name="StaticEditing">
+                    <Storyboard>
+                        <DoubleAnimation Duration="0:0:0.6" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="staticEffectsBorder" d:IsOptimized="True"/>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="EndStaticEditing">
+                    <Storyboard>
+                        <DoubleAnimation Duration="0:0:0.6" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="staticEffectsBorder" d:IsOptimized="True"/>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+            <VisualStateGroup x:Name="RecordingVisualStateGroup">
+                <VisualStateGroup.Transitions>
+                    <VisualTransition GeneratedDuration="0" To="Recording">
+                        <Storyboard>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever" Storyboard.TargetName="recordingStack">
+                                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                                <EasingDoubleKeyFrame KeyTime="0:0:1.0" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualTransition>
+                    <VisualTransition GeneratedDuration="0" To="RecordingStopped">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="recordingStack"/>
+                        </Storyboard>
+                    </VisualTransition>
+                </VisualStateGroup.Transitions>
+                <VisualState x:Name="Recording">
+                    <Storyboard>
+                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)"  Storyboard.TargetName="recordingStack" d:IsOptimized="True"/>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="RecordingStopped">
+                    <Storyboard>
+                        <DoubleAnimation Duration="0:0:0.1" To="0" Storyboard.TargetProperty="(UIElement.Opacity)"  Storyboard.TargetName="recordingStack" d:IsOptimized="True"/>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock  Text="Video Capture" FontSize="32" Margin="12,0,0,6" Grid.Column="1" VerticalAlignment="Center" FontFamily="Segoe WP"/>
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+            </Grid.RowDefinitions>
+
+            <CaptureElement  x:Name="m_previewVideoElement"  properties:FrameworkElementAttachedProperties.LoadedCommand="{Binding PreviewVideoElementLoadedCommand}" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform" Height="{Binding ImageHeight}" Width="{Binding ImageWidth}"  />
+            <StackPanel x:Name="recordingStack"  Margin="0,20,0,0" Orientation="Horizontal" Opacity="0"  HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Ellipse HorizontalAlignment="Left" Height="32" Margin="0" StrokeEndLineCap="Square" Stroke="Black" VerticalAlignment="Center" Width="32" Fill="Red"/>
+                <TextBlock HorizontalAlignment="Left" Margin="8,0,0,0" TextWrapping="Wrap" Text="Recording" VerticalAlignment="Center" Foreground="#FFF30B0B" FontSize="26.667"  FontWeight="Bold"/>
+            </StackPanel>
+
+        </Grid>
+
+        <Border x:Name="editingBorder" VerticalAlignment="Bottom" IsHitTestVisible="{Binding IsEditing}"  Grid.ColumnSpan="3" Opacity="0" Grid.Row="1" Height="100">
+            <Grid Background="Black" Opacity="0.65">
+                <StackPanel  HorizontalAlignment="Center"  VerticalAlignment="Bottom" x:Name="editorStackPanel" Orientation="Vertical"  >
+                    <Slider Height ="45"  Maximum="{Binding CurrentEditor.MaxValue}" Minimum="{Binding CurrentEditor.MinValue}" LargeChange="0.1" SmallChange="0.1" StepFrequency="0.1" Value="{Binding CurrentEditor.CurrentValue, Mode=TwoWay}"/>
+                    <ListView ItemTemplate="{StaticResource GroupTemplate}" ItemContainerStyle="{StaticResource ListViewItemStyle1}" SelectedItem="{Binding CurrentEditor, Mode=TwoWay}" ItemsSource="{Binding Effects}" ItemsPanel="{StaticResource ItemsPanelTemplate1}" Background="Transparent" VerticalAlignment="Bottom" Style="{StaticResource ListViewStyle1}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border x:Name="staticEffectsBorder"  HorizontalAlignment="Stretch" IsHitTestVisible="{Binding IsStaticEffectVisible}" VerticalAlignment="Bottom"  Grid.ColumnSpan="3" Opacity="0" Grid.Row="1" Height="100">
+            <Grid Background="Black" Opacity="0.65">
+                <ListView ItemTemplate="{StaticResource StaticEffectsTemplate}" HorizontalAlignment="Center" ItemContainerStyle="{StaticResource ListViewItemStyle1}" SelectedItem="{Binding CurrentStaticEditor, Mode=TwoWay}" ItemsSource="{Binding NonEditableEffects}" ItemsPanel="{StaticResource ItemsPanelTemplate1}" Background="Transparent" VerticalAlignment="Bottom" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled" Style="{StaticResource ListViewStyle1}"/>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Page>
+

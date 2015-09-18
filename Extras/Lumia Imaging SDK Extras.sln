@@ -1,0 +1,141 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lumia.Imaging.Extras.ImageProviders", "Lumia.Imaging.Extras.ImageProviders", "{722E9003-36BA-44D9-8F19-3A55245D990B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lumia.Imaging.Extras.Utility", "Lumia.Imaging.Extras.Utility", "{99A11B82-E0AB-4423-88E3-9FC7313F949F}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Lumia.Imaging.Extras.Utility.Shared", "Lumia.Imaging.Extras.Utility\Lumia.Imaging.Extras.Utility.Shared\Lumia.Imaging.Extras.Utility.Shared.shproj", "{496FB6BB-FF5D-4596-B436-E79BD5AAC456}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lumia.Imaging.Extras.Layers", "Lumia.Imaging.Extras.Layers", "{566F60CC-9D0F-4B0E-AD08-D938CA8CFDB4}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Lumia.Imaging.Extras.Layers.Shared", "Lumia.Imaging.Extras.Layers\Lumia.Imaging.Extras.Layers.Shared\Lumia.Imaging.Extras.Layers.Shared.shproj", "{5A7558FF-B22C-4722-B7D2-657C2DC3EFCA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{AA43F5A3-2225-4301-9BB0-B33F083A5336}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Lumia.Imaging.Extras.ImageProviders.Shared", "Lumia.Imaging.Extras.ImageProviders\Lumia.Imaging.Extras.ImageProviders.Shared\Lumia.Imaging.Extras.ImageProviders.Shared.shproj", "{FAAFD572-2057-4485-AA68-2B54E5410593}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lumia.Imaging.Extras.ImageProviders.UWP", "Lumia.Imaging.Extras.ImageProviders\Lumia.Imaging.Extras.ImageProviders.UWP\Lumia.Imaging.Extras.ImageProviders.UWP.csproj", "{3DDC2DB3-6820-47CE-A128-BBFBCC3E7A13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lumia.Imaging.Extras.Layers.UWP", "Lumia.Imaging.Extras.Layers\Lumia.Imaging.Extras.Layers.UWP\Lumia.Imaging.Extras.Layers.UWP.csproj", "{C909A9D3-84AB-4438-994B-77C463283603}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lumia.Imaging.Extras.Utility.UWP", "Lumia.Imaging.Extras.Utility\Lumia.Imaging.Extras.Utility.UWP\Lumia.Imaging.Extras.Utility.UWP.csproj", "{DBC0BC7E-FEB4-43E7-8CEB-97F17BE6C6A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lumia.Imaging.Extras.Tests", "Lumia.Imaging.Extras.Tests", "{7A279C08-AC55-468B-8AFF-A31D7960FD27}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Lumia.Imaging.Extras.Tests.Shared", "Lumia.Imaging.Extras.Tests\Lumia.Imaging.Extras.Tests.Shared\Lumia.Imaging.Extras.Tests.Shared.shproj", "{2CA064C1-FB6B-4C46-9F78-C7A227736D50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lumia.Imaging.Extras.Tests.UWP", "Lumia.Imaging.Extras.Tests\Lumia.Imaging.Extras.Tests.UWP\Lumia.Imaging.Extras.Tests.UWP.csproj", "{C6FE8664-369F-4050-9354-1B49E706E1D9}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Lumia.Imaging.Extras.Layers\Lumia.Imaging.Extras.Layers.Shared\Lumia.Imaging.Extras.Layers.Shared.projitems*{5a7558ff-b22c-4722-b7d2-657c2dc3efca}*SharedItemsImports = 13
+		Lumia.Imaging.Extras.Utility\Lumia.Imaging.Extras.Utility.Shared\Lumia.Imaging.Extras.Utility.Shared.projitems*{dbc0bc7e-feb4-43e7-8ceb-97f17be6c6a7}*SharedItemsImports = 4
+		Lumia.Imaging.Extras.Tests\Lumia.Imaging.Extras.Tests.Shared\Lumia.Imaging.Extras.Tests.Shared.projitems*{c6fe8664-369f-4050-9354-1b49e706e1d9}*SharedItemsImports = 4
+		Lumia.Imaging.Extras.ImageProviders\Lumia.Imaging.Extras.ImageProviders.Shared\Lumia.Imaging.Extras.ImageProviders.Shared.projitems*{3ddc2db3-6820-47ce-a128-bbfbcc3e7a13}*SharedItemsImports = 4
+		Lumia.Imaging.Extras.ImageProviders\Lumia.Imaging.Extras.ImageProviders.Shared\Lumia.Imaging.Extras.ImageProviders.Shared.projitems*{faafd572-2057-4485-aa68-2b54e5410593}*SharedItemsImports = 13
+		Lumia.Imaging.Extras.Tests\Lumia.Imaging.Extras.Tests.Shared\Lumia.Imaging.Extras.Tests.Shared.projitems*{2ca064c1-fb6b-4c46-9f78-c7a227736d50}*SharedItemsImports = 13
+		Lumia.Imaging.Extras.Layers\Lumia.Imaging.Extras.Layers.Shared\Lumia.Imaging.Extras.Layers.Shared.projitems*{c909a9d3-84ab-4438-994b-77c463283603}*SharedItemsImports = 4
+		Lumia.Imaging.Extras.Utility\Lumia.Imaging.Extras.Utility.Shared\Lumia.Imaging.Extras.Utility.Shared.projitems*{496fb6bb-ff5d-4596-b436-e79bd5aac456}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DDC2DB3-6820-47CE-A128-BBFBCC3E7A13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DDC2DB3-6820-47CE-A128-BBFBCC3E7A13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DDC2DB3-6820-47CE-A128-BBFBCC3E7A13}.Debug|ARM.ActiveCfg = Debug|ARM
+		{3DDC2DB3-6820-47CE-A128-BBFBCC3E7A13}.Debug|ARM.Build.0 = Debug|ARM
+		{3DDC2DB3-6820-47CE-A128-BBFBCC3E7A13}.Debug|x64.ActiveCfg = Debug|x64
+		{3DDC2DB3-6820-47CE-A128-BBFBCC3E7A13}.Debug|x64.Build.0 = Debug|x64
+		{3DDC2DB3-6820-47CE-A128-BBFBCC3E7A13}.Debug|x86.ActiveCfg = Debug|x86
+		{3DDC2DB3-6820-47CE-A128-BBFBCC3E7A13}.Debug|x86.Build.0 = Debug|x86
+		{3DDC2DB3-6820-47CE-A128-BBFBCC3E7A13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DDC2DB3-6820-47CE-A128-BBFBCC3E7A13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DDC2DB3-6820-47CE-A128-BBFBCC3E7A13}.Release|ARM.ActiveCfg = Release|ARM
+		{3DDC2DB3-6820-47CE-A128-BBFBCC3E7A13}.Release|ARM.Build.0 = Release|ARM
+		{3DDC2DB3-6820-47CE-A128-BBFBCC3E7A13}.Release|x64.ActiveCfg = Release|x64
+		{3DDC2DB3-6820-47CE-A128-BBFBCC3E7A13}.Release|x64.Build.0 = Release|x64
+		{3DDC2DB3-6820-47CE-A128-BBFBCC3E7A13}.Release|x86.ActiveCfg = Release|x86
+		{3DDC2DB3-6820-47CE-A128-BBFBCC3E7A13}.Release|x86.Build.0 = Release|x86
+		{C909A9D3-84AB-4438-994B-77C463283603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C909A9D3-84AB-4438-994B-77C463283603}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C909A9D3-84AB-4438-994B-77C463283603}.Debug|ARM.ActiveCfg = Debug|ARM
+		{C909A9D3-84AB-4438-994B-77C463283603}.Debug|ARM.Build.0 = Debug|ARM
+		{C909A9D3-84AB-4438-994B-77C463283603}.Debug|x64.ActiveCfg = Debug|x64
+		{C909A9D3-84AB-4438-994B-77C463283603}.Debug|x64.Build.0 = Debug|x64
+		{C909A9D3-84AB-4438-994B-77C463283603}.Debug|x86.ActiveCfg = Debug|x86
+		{C909A9D3-84AB-4438-994B-77C463283603}.Debug|x86.Build.0 = Debug|x86
+		{C909A9D3-84AB-4438-994B-77C463283603}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C909A9D3-84AB-4438-994B-77C463283603}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C909A9D3-84AB-4438-994B-77C463283603}.Release|ARM.ActiveCfg = Release|ARM
+		{C909A9D3-84AB-4438-994B-77C463283603}.Release|ARM.Build.0 = Release|ARM
+		{C909A9D3-84AB-4438-994B-77C463283603}.Release|x64.ActiveCfg = Release|x64
+		{C909A9D3-84AB-4438-994B-77C463283603}.Release|x64.Build.0 = Release|x64
+		{C909A9D3-84AB-4438-994B-77C463283603}.Release|x86.ActiveCfg = Release|x86
+		{C909A9D3-84AB-4438-994B-77C463283603}.Release|x86.Build.0 = Release|x86
+		{DBC0BC7E-FEB4-43E7-8CEB-97F17BE6C6A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBC0BC7E-FEB4-43E7-8CEB-97F17BE6C6A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBC0BC7E-FEB4-43E7-8CEB-97F17BE6C6A7}.Debug|ARM.ActiveCfg = Debug|ARM
+		{DBC0BC7E-FEB4-43E7-8CEB-97F17BE6C6A7}.Debug|ARM.Build.0 = Debug|ARM
+		{DBC0BC7E-FEB4-43E7-8CEB-97F17BE6C6A7}.Debug|x64.ActiveCfg = Debug|x64
+		{DBC0BC7E-FEB4-43E7-8CEB-97F17BE6C6A7}.Debug|x64.Build.0 = Debug|x64
+		{DBC0BC7E-FEB4-43E7-8CEB-97F17BE6C6A7}.Debug|x86.ActiveCfg = Debug|x86
+		{DBC0BC7E-FEB4-43E7-8CEB-97F17BE6C6A7}.Debug|x86.Build.0 = Debug|x86
+		{DBC0BC7E-FEB4-43E7-8CEB-97F17BE6C6A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBC0BC7E-FEB4-43E7-8CEB-97F17BE6C6A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBC0BC7E-FEB4-43E7-8CEB-97F17BE6C6A7}.Release|ARM.ActiveCfg = Release|ARM
+		{DBC0BC7E-FEB4-43E7-8CEB-97F17BE6C6A7}.Release|ARM.Build.0 = Release|ARM
+		{DBC0BC7E-FEB4-43E7-8CEB-97F17BE6C6A7}.Release|x64.ActiveCfg = Release|x64
+		{DBC0BC7E-FEB4-43E7-8CEB-97F17BE6C6A7}.Release|x64.Build.0 = Release|x64
+		{DBC0BC7E-FEB4-43E7-8CEB-97F17BE6C6A7}.Release|x86.ActiveCfg = Release|x86
+		{DBC0BC7E-FEB4-43E7-8CEB-97F17BE6C6A7}.Release|x86.Build.0 = Release|x86
+		{C6FE8664-369F-4050-9354-1B49E706E1D9}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{C6FE8664-369F-4050-9354-1B49E706E1D9}.Debug|ARM.ActiveCfg = Debug|ARM
+		{C6FE8664-369F-4050-9354-1B49E706E1D9}.Debug|ARM.Build.0 = Debug|ARM
+		{C6FE8664-369F-4050-9354-1B49E706E1D9}.Debug|ARM.Deploy.0 = Debug|ARM
+		{C6FE8664-369F-4050-9354-1B49E706E1D9}.Debug|x64.ActiveCfg = Debug|x64
+		{C6FE8664-369F-4050-9354-1B49E706E1D9}.Debug|x64.Build.0 = Debug|x64
+		{C6FE8664-369F-4050-9354-1B49E706E1D9}.Debug|x64.Deploy.0 = Debug|x64
+		{C6FE8664-369F-4050-9354-1B49E706E1D9}.Debug|x86.ActiveCfg = Debug|x86
+		{C6FE8664-369F-4050-9354-1B49E706E1D9}.Debug|x86.Build.0 = Debug|x86
+		{C6FE8664-369F-4050-9354-1B49E706E1D9}.Debug|x86.Deploy.0 = Debug|x86
+		{C6FE8664-369F-4050-9354-1B49E706E1D9}.Release|Any CPU.ActiveCfg = Release|x86
+		{C6FE8664-369F-4050-9354-1B49E706E1D9}.Release|ARM.ActiveCfg = Release|ARM
+		{C6FE8664-369F-4050-9354-1B49E706E1D9}.Release|ARM.Build.0 = Release|ARM
+		{C6FE8664-369F-4050-9354-1B49E706E1D9}.Release|ARM.Deploy.0 = Release|ARM
+		{C6FE8664-369F-4050-9354-1B49E706E1D9}.Release|x64.ActiveCfg = Release|x64
+		{C6FE8664-369F-4050-9354-1B49E706E1D9}.Release|x64.Build.0 = Release|x64
+		{C6FE8664-369F-4050-9354-1B49E706E1D9}.Release|x64.Deploy.0 = Release|x64
+		{C6FE8664-369F-4050-9354-1B49E706E1D9}.Release|x86.ActiveCfg = Release|x86
+		{C6FE8664-369F-4050-9354-1B49E706E1D9}.Release|x86.Build.0 = Release|x86
+		{C6FE8664-369F-4050-9354-1B49E706E1D9}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{496FB6BB-FF5D-4596-B436-E79BD5AAC456} = {99A11B82-E0AB-4423-88E3-9FC7313F949F}
+		{5A7558FF-B22C-4722-B7D2-657C2DC3EFCA} = {566F60CC-9D0F-4B0E-AD08-D938CA8CFDB4}
+		{FAAFD572-2057-4485-AA68-2B54E5410593} = {722E9003-36BA-44D9-8F19-3A55245D990B}
+		{3DDC2DB3-6820-47CE-A128-BBFBCC3E7A13} = {722E9003-36BA-44D9-8F19-3A55245D990B}
+		{C909A9D3-84AB-4438-994B-77C463283603} = {566F60CC-9D0F-4B0E-AD08-D938CA8CFDB4}
+		{DBC0BC7E-FEB4-43E7-8CEB-97F17BE6C6A7} = {99A11B82-E0AB-4423-88E3-9FC7313F949F}
+		{2CA064C1-FB6B-4C46-9F78-C7A227736D50} = {7A279C08-AC55-468B-8AFF-A31D7960FD27}
+		{C6FE8664-369F-4050-9354-1B49E706E1D9} = {7A279C08-AC55-468B-8AFF-A31D7960FD27}
+	EndGlobalSection
+EndGlobal

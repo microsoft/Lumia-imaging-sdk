@@ -1,0 +1,19 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"   
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    
+    <!--<DataTemplate x:Key="RangeEditorTemplate">
+        <StackPanel>
+            <Slider SmallChange="0.05"
+                    LargeChange="0.2"
+                    Minimum="{Binding Minimum, Mode=TwoWay}" 
+                    Maximum="{Binding Maximum, Mode=TwoWay}" 
+                    Value="{Binding Value, Mode=TwoWay}" />
+            --><!--<TextBlock Margin="12,-45,0,0" IsHitTestVisible="False" Text="{Binding FilterName, Mode=OneTime, Converter={DynamicResource ResourceKey=StringFormat}, ConverterParameter='Filter: {0}'}" />--><!--           
+        </StackPanel>
+    </DataTemplate>-->
+</ResourceDictionary>

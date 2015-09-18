@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="QuickStartVB.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:QuickStartVB"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Quick Start" Margin="4,4,0,4" FontSize="32"></TextBlock>
+        <SwapChainPanel x:Name="SwapChainPanelTarget" Grid.Row="1" />
+        <StackPanel Grid.Row="2">
+            <TextBlock Text="Brightness" Margin="20,0,0,0"/>
+            <Slider Minimum="-1.0" Maximum="1.0" StepFrequency="0.1" ValueChanged="OnBrightnessChanged" Margin="20,0" ></Slider>
+        </StackPanel>
+        <Image x:Name="OriginalImage" Grid.Row="1" Width="200" Height="200" Stretch="Uniform" 
+               HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,12,0,0" />
+
+        <Button Content="Pick an image" Click="PickImage_Click" HorizontalAlignment="Left" Grid.Row="3" />
+        <Button Content="Save the image" Click="SaveImage_Click" x:Name="SaveButton" HorizontalAlignment="Right" Grid.Row="3" IsEnabled="False" />
+    </Grid>
+</Page>
+

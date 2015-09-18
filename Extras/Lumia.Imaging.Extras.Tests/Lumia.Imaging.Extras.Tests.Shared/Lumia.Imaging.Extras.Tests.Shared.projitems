@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>2ca064c1-fb6b-4c46-9f78-c7a227736d50</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Lumia.Imaging.Extras.Tests.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\BitmapExtensionsTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\BufferExtensionsTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FileUtilities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KnownImage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KnownImages.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Layers\AdjustmentLayerTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Layers\LayerListTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Layers\LayerStyleTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Layers\LayerTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaybeTaskTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)TestImages\GuyScribbles.png" />
+    <Content Include="$(MSBuildThisFileDirectory)TestImages\MSB09_Group_004_cropped_orangeshirt.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)TestImages\MSC10_JohnFrnds_003_cropped_modified.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)TestImages\WEB13_Mikiko_Lynn_155_small.jpg" />
+  </ItemGroup>
+</Project>

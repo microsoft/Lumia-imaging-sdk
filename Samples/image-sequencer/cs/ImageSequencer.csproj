@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{090946C8-60ED-47F7-9A84-4FF217339626}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImageSequencer</RootNamespace>
+    <AssemblyName>ImageSequencer</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>ImageSequencer_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\NavigationHelper.cs" />
+    <Compile Include="Common\ObservableDictionary.cs" />
+    <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="GifExporter.cs" />
+    <Compile Include="GifPage.xaml.cs">
+      <DependentUpon>GifPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressBarHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SequenceCapturePage.xaml.cs">
+      <DependentUpon>SequenceCapturePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SequencePreviewPage.xaml.cs">
+      <DependentUpon>SequencePreviewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SequencesPage.xaml.cs">
+      <DependentUpon>SequencesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VideoPreviewCapturePage.xaml.cs">
+      <DependentUpon>VideoPreviewCapturePage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="ImageSequencer_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\appbar.align.disabled.png" />
+    <Content Include="Assets\appbar.align.enabled.png" />
+    <Content Include="Assets\appbar.frame.disabled.png" />
+    <Content Include="Assets\appbar.frame.enabled.png" />
+    <Content Include="Assets\appbar.sequence.capture.png" />
+    <Content Include="Assets\sdk-splash.png" />
+    <Content Include="Assets\sequence.1.0.jpg" />
+    <Content Include="Assets\sequence.1.1.jpg" />
+    <Content Include="Assets\sequence.1.10.jpg" />
+    <Content Include="Assets\sequence.1.11.jpg" />
+    <Content Include="Assets\sequence.1.12.jpg" />
+    <Content Include="Assets\sequence.1.13.jpg" />
+    <Content Include="Assets\sequence.1.14.jpg" />
+    <Content Include="Assets\sequence.1.15.jpg" />
+    <Content Include="Assets\sequence.1.16.jpg" />
+    <Content Include="Assets\sequence.1.17.jpg" />
+    <Content Include="Assets\sequence.1.18.jpg" />
+    <Content Include="Assets\sequence.1.19.jpg" />
+    <Content Include="Assets\sequence.1.2.jpg" />
+    <Content Include="Assets\sequence.1.20.jpg" />
+    <Content Include="Assets\sequence.1.21.jpg" />
+    <Content Include="Assets\sequence.1.22.jpg" />
+    <Content Include="Assets\sequence.1.3.jpg" />
+    <Content Include="Assets\sequence.1.4.jpg" />
+    <Content Include="Assets\sequence.1.5.jpg" />
+    <Content Include="Assets\sequence.1.6.jpg" />
+    <Content Include="Assets\sequence.1.7.jpg" />
+    <Content Include="Assets\sequence.1.8.jpg" />
+    <Content Include="Assets\sequence.1.9.jpg" />
+    <Content Include="Assets\sequence.2.0.jpg" />
+    <Content Include="Assets\sequence.2.1.jpg" />
+    <Content Include="Assets\sequence.2.10.jpg" />
+    <Content Include="Assets\sequence.2.11.jpg" />
+    <Content Include="Assets\sequence.2.12.jpg" />
+    <Content Include="Assets\sequence.2.13.jpg" />
+    <Content Include="Assets\sequence.2.14.jpg" />
+    <Content Include="Assets\sequence.2.15.jpg" />
+    <Content Include="Assets\sequence.2.16.jpg" />
+    <Content Include="Assets\sequence.2.17.jpg" />
+    <Content Include="Assets\sequence.2.18.jpg" />
+    <Content Include="Assets\sequence.2.19.jpg" />
+    <Content Include="Assets\sequence.2.2.jpg" />
+    <Content Include="Assets\sequence.2.3.jpg" />
+    <Content Include="Assets\sequence.2.4.jpg" />
+    <Content Include="Assets\sequence.2.5.jpg" />
+    <Content Include="Assets\sequence.2.6.jpg" />
+    <Content Include="Assets\sequence.2.7.jpg" />
+    <Content Include="Assets\sequence.2.8.jpg" />
+    <Content Include="Assets\sequence.2.9.jpg" />
+    <Content Include="Assets\smalltile-sdk.png" />
+    <Content Include="Assets\Splash-sdk.scale-100.png" />
+    <Content Include="Assets\squaretile-sdk.png" />
+    <Content Include="Assets\storelogo-sdk.png" />
+    <Content Include="Assets\tile-sdk.png" />
+    <Content Include="Common\ReadMe.txt" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\StoreLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="AboutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GifPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SequenceCapturePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SequencePreviewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SequencesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="VideoPreviewCapturePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="WindowsMobile, Version=10.0.10240.0">
+      <Name>Windows Mobile Extensions for the UWP</Name>
+    </SDKReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

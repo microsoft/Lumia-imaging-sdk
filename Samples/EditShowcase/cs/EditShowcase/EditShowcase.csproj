@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{AF52EA4C-422D-40FE-B17F-C2632A1DD464}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lumia.Imaging.EditShowcase</RootNamespace>
+    <AssemblyName>EditShowcase</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10141.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>EditShowcase_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\CloseFlyoutAction.cs" />
+    <Compile Include="Actions\OpenFlyoutAction.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttachedProperties\FrameworkElementAttachedProperties.cs" />
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="DelegateCommand.cs" />
+    <Compile Include="Extensions\EffectPhotoExtensions.cs" />
+    <Compile Include="Extras\Effects\DepthOfField\DepthOfFieldEffect.cs" />
+    <Compile Include="Extras\Effects\DepthOfField\DepthOfFieldQuality.cs" />
+    <Compile Include="Extras\Effects\DepthOfField\EllipticFocusDepthOfFieldEffect.cs" />
+    <Compile Include="Extras\Effects\DepthOfField\FocusBand.cs" />
+    <Compile Include="Extras\Effects\DepthOfField\FocusEllipse.cs" />
+    <Compile Include="Extras\Effects\DepthOfField\FocusObjectDepthOfFieldEffect.cs" />
+    <Compile Include="Extras\Effects\DepthOfField\Internal\ChangeTracker.cs" />
+    <Compile Include="Extras\Effects\DepthOfField\Internal\EllipticFocusGradientGenerator.cs" />
+    <Compile Include="Extras\Effects\DepthOfField\Internal\FocusGradientGenerator.cs" />
+    <Compile Include="Extras\Effects\DepthOfField\Internal\FocusObjectKernelMapGenerator.cs" />
+    <Compile Include="Extras\Effects\DepthOfField\Internal\GradientLine.cs" />
+    <Compile Include="Extras\Effects\DepthOfField\Internal\GroupChangeTracker.cs" />
+    <Compile Include="Extras\Effects\DepthOfField\Internal\IChangeTracker.cs" />
+    <Compile Include="Extras\Effects\DepthOfField\Internal\IndexRemappingEffect.cs" />
+    <Compile Include="Extras\Effects\DepthOfField\Internal\KernelBand.cs" />
+    <Compile Include="Extras\Effects\DepthOfField\Internal\KernelGenerator.cs" />
+    <Compile Include="Extras\Effects\DepthOfField\Internal\LensTiltFocusGradientGenerator.cs" />
+    <Compile Include="Extras\Effects\DepthOfField\LensTiltDepthOfFieldEffect.cs" />
+    <Compile Include="Extras\Effects\HighpassEffect.cs" />
+    <Compile Include="Extras\Effects\NoiseImageSource.cs" />
+    <Compile Include="Extras\Extensions\BitmapExtensions.cs" />
+    <Compile Include="Extras\Extensions\BufferExtensions.cs" />
+    <Compile Include="Extras\Extensions\DotVisualizationExtensions.cs" />
+    <Compile Include="Extras\Extensions\ImageProviderExtensions.cs" />
+    <Compile Include="Extras\Layers\AdjustmentLayer.cs" />
+    <Compile Include="Extras\Layers\Internal\LayerBlend.cs" />
+    <Compile Include="Extras\Layers\Internal\LayerSource.cs" />
+    <Compile Include="Extras\Layers\Layer.cs" />
+    <Compile Include="Extras\Layers\LayerContext.cs" />
+    <Compile Include="Extras\Layers\LayerList.cs" />
+    <Compile Include="Extras\Layers\LayerStyle.cs" />
+    <Compile Include="Extras\MaybeTask.cs" />
+    <Compile Include="FilterCategoryEnum.cs" />
+    <Compile Include="FilterCategoryItem.cs" />
+    <Compile Include="FilterEditorTemplateSelector.cs" />
+    <Compile Include="FilterExplorerView.xaml.cs">
+      <DependentUpon>FilterExplorerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FilterFactory.cs" />
+    <Compile Include="ImageProcessors\BlendEffectProcessor.cs" />
+    <Compile Include="ImageProcessors\CreativeStudio\BWCopperEffect.cs" />
+    <Compile Include="ImageProcessors\CreativeStudio\BWHiEffect.cs" />
+    <Compile Include="ImageProcessors\CreativeStudio\BWloEffect.cs" />
+    <Compile Include="ImageProcessors\CreativeStudio\CreativeStudioEffect.cs" />
+    <Compile Include="ImageProcessors\CreativeStudio\CrossProcessColdEffect.cs" />
+    <Compile Include="ImageProcessors\CreativeStudio\IndoorEffect.cs" />
+    <Compile Include="ImageProcessors\CreativeStudio\Lookups.cs" />
+    <Compile Include="ImageProcessors\CreativeStudio\LoSatWarmEffect.cs" />
+    <Compile Include="ImageProcessors\CreativeStudio\RetrotoneEffect.cs" />
+    <Compile Include="ImageProcessors\CreativeStudio\SunsetEffect.cs" />
+    <Compile Include="ImageProcessors\CropEffectProcessor.cs" />
+    <Compile Include="ImageProcessors\CurveProcessor.cs" />
+    <Compile Include="ImageProcessors\DepthOfField\BlockTiltDoF.cs" />
+    <Compile Include="ImageProcessors\DepthOfField\EllipseTiltDoF.cs" />
+    <Compile Include="ImageProcessors\DepthOfField\LandscapeBackgroundDoF.cs" />
+    <Compile Include="ImageProcessors\FilterProcessor.cs" />
+    <Compile Include="ImageProcessors\GlamMe\BWAntiqueEffect.cs" />
+    <Compile Include="ImageProcessors\GlamMe\BWEffect.cs" />
+    <Compile Include="ImageProcessors\GlamMe\DreamEffect.cs" />
+    <Compile Include="ImageProcessors\GlamMe\ElegantEffect.cs" />
+    <Compile Include="ImageProcessors\GlamMe\FantasticEffect.cs" />
+    <Compile Include="ImageProcessors\GlamMe\FreshEffect.cs" />
+    <Compile Include="ImageProcessors\GlamMe\GlamMeEffect.cs" />
+    <Compile Include="ImageProcessors\GlamMe\GlamMeLomoEffect.cs" />
+    <Compile Include="ImageProcessors\GlamMe\LensBlureSampleEffect.cs" />
+    <Compile Include="ImageProcessors\GlamMe\LightEffect.cs" />
+    <Compile Include="ImageProcessors\GlamMe\MagicalEffect.cs" />
+    <Compile Include="ImageProcessors\GlamMe\MagzineStarEffect.cs" />
+    <Compile Include="ImageProcessors\GlamMe\MintEffect.cs" />
+    <Compile Include="ImageProcessors\GlamMe\OldPosterEffect.cs" />
+    <Compile Include="ImageProcessors\GlamMe\PopEffect.cs" />
+    <Compile Include="ImageProcessors\GlamMe\ReflectiveGlassEffect.cs" />
+    <Compile Include="ImageProcessors\GlamMe\RetroEffect.cs" />
+    <Compile Include="ImageProcessors\GlamMe\SketchEffect.cs" />
+    <Compile Include="ImageProcessors\GlamMe\VintageEffect.cs" />
+    <Compile Include="ImageProcessors\GlamMe\VioletEffect.cs" />
+    <Compile Include="ImageProcessors\HorizontalAlignment.cs" />
+    <Compile Include="ImageProcessors\HSLProcessor.cs" />
+    <Compile Include="ImageProcessors\ImageProcessor.cs" />
+    <Compile Include="ImageProcessors\LensBlurProcessor.cs" />
+    <Compile Include="ImageProcessors\LinearGradientGradientSourceEffectProcessor.cs" />
+    <Compile Include="ImageProcessors\OverlayFactory.cs" />
+    <Compile Include="ImageProcessors\RadialGradientSourceEffectProcessor.cs" />
+    <Compile Include="ImageProcessors\ReframingEffectProcessor.cs" />
+    <Compile Include="ImageProcessors\RgbLevelsFilterProcessor.cs" />
+    <Compile Include="ImageProcessors\RgbMixerEffectProcessor.cs" />
+    <Compile Include="ImageProcessors\SaturationLightnessProcessor.cs" />
+    <Compile Include="ImageProcessors\SimpleEffectProcessor.cs" />
+    <Compile Include="ImageProcessors\SplitToneFilterProcessor.cs" />
+    <Compile Include="ImageProcessors\SpotlightFilterProcessor.cs" />
+    <Compile Include="Interfaces\IImageProcessor.cs" />
+    <Compile Include="LookupCurves.cs" />
+    <Compile Include="LookupImage.cs" />
+    <Compile Include="PreloadedImages.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\DisposableHelper.cs" />
+    <Compile Include="Utilities\TaskUtilities.cs" />
+    <Compile Include="ViewModels\Editors\BoolEditorViewModel.cs" />
+    <Compile Include="ViewModels\Editors\EditorViewModelBase.cs" />
+    <Compile Include="ViewModels\Editors\EnumEditorViewModel.cs" />
+    <Compile Include="ViewModels\Editors\RangeEditorViewModel.cs" />
+    <Compile Include="ViewModels\Editors\RangeEditorViewModelEx.cs" />
+    <Compile Include="ViewModels\FilterExplorerViewModel.cs" />
+    <Compile Include="ViewModels\ImagePreviewViewModel.cs" />
+    <Compile Include="ViewModels\ImageProcessorRenderer.cs" />
+    <Compile Include="ViewModels\ImageViewModelBase.cs" />
+    <Compile Include="ViewModels\RenderOption.cs" />
+    <Compile Include="ViewModels\RenderResult.cs" />
+    <Compile Include="ViewModels\ThumbnailRenderer.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="EditShowcase_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\smalltile-sdk.png" />
+    <Content Include="Assets\splash-sdk.png" />
+    <Content Include="Assets\squaretile-sdk.png" />
+    <Content Include="Assets\storelogo-sdk.png" />
+    <Content Include="Assets\tile-sdk.png" />
+    <Content Include="Icons\appbar_edit.png" />
+    <Content Include="Icons\appbar_effects.png" />
+    <Content Include="Icons\appbar_filter.png" />
+    <Content Include="Icons\appbar_load.png" />
+    <Content Include="Icons\appbar_save.png" />
+    <Content Include="Icons\Delete.png" />
+    <Content Include="Icons\filters.png" />
+    <Content Include="Icons\Graphics\Circle.png" />
+    <Content Include="Icons\Graphics\Flower.png" />
+    <Content Include="Icons\Graphics\Heart.png" />
+    <Content Include="Icons\Graphics\Hexagon.png" />
+    <Content Include="Icons\Graphics\Star.png" />
+    <Content Include="Icons\Undo.png" />
+    <Content Include="Images\cold_table.bmp" />
+    <Content Include="Images\cold_vignette.png" />
+    <Content Include="Images\color_chart.jpg" />
+    <Content Include="Images\coppertable.bmp" />
+    <Content Include="Images\Filters_Landscape_Overlay_Dream.jpg" />
+    <Content Include="Images\Filters_Landscape_Overlay_Fantastic1.jpg" />
+    <Content Include="Images\Filters_Landscape_Overlay_Fantastic2.png" />
+    <Content Include="Images\Filters_Landscape_Overlay_Light.jpg" />
+    <Content Include="Images\Filters_Landscape_Overlay_Magazine.png" />
+    <Content Include="Images\Filters_Landscape_Overlay_Pop3.png" />
+    <Content Include="Images\Filters_Landscape_Overlay_Poster2.png" />
+    <Content Include="Images\Filters_Landscape_Overlay_Reflect.jpg" />
+    <Content Include="Images\Filters_Portrait_Overlay_Dream.jpg" />
+    <Content Include="Images\Filters_Portrait_Overlay_Fantastic1.jpg" />
+    <Content Include="Images\Filters_Portrait_Overlay_Fantastic2.png" />
+    <Content Include="Images\Filters_Portrait_Overlay_Light.jpg" />
+    <Content Include="Images\Filters_Portrait_Overlay_Magazine.png" />
+    <Content Include="Images\Filters_Portrait_Overlay_Pop3.png" />
+    <Content Include="Images\Filters_Portrait_Overlay_Poster2.png" />
+    <Content Include="Images\Filters_Portrait_Overlay_Reflect.jpg" />
+    <Content Include="Images\Filters_Square_Overlay_Dream.jpg" />
+    <Content Include="Images\Filters_Square_Overlay_Fantastic1.jpg" />
+    <Content Include="Images\Filters_Square_Overlay_Fantastic2.png" />
+    <Content Include="Images\Filters_Square_Overlay_Light.jpg" />
+    <Content Include="Images\Filters_Square_Overlay_Magazine.png" />
+    <Content Include="Images\Filters_Square_Overlay_Pop3.png" />
+    <Content Include="Images\Filters_Square_Overlay_Poster2.png" />
+    <Content Include="Images\Filters_Square_Overlay_Reflect.jpg" />
+    <Content Include="Images\indoor_table.bmp" />
+    <Content Include="Images\LensBlurMask.jpg" />
+    <Content Include="Images\losat_table.bmp" />
+    <Content Include="Images\losat_vignette.jpg" />
+    <Content Include="Images\man.jpg" />
+    <Content Include="Images\neon_table.bmp" />
+    <Content Include="Images\noise_grain12_1mp.jpg" />
+    <Content Include="Images\noise_grain12_5mp.jpg" />
+    <Content Include="Images\noise_grain19_1mp.jpg" />
+    <Content Include="Images\noise_grain19_5mp.jpg" />
+    <Content Include="Images\overlay_light.png" />
+    <Content Include="Images\overlay_magazinestar.png" />
+    <Content Include="Images\overlay_oldposter.png" />
+    <Content Include="Images\overlay_vintage.jpg" />
+    <Content Include="Images\retrotone_vignette_gray.png" />
+    <Content Include="Images\sunset_table.bmp" />
+    <Content Include="Images\sunset_vignette.png" />
+    <Content Include="Images\vivid_table.bmp" />
+    <Content Include="Images\vivid_vignette2.bmp" />
+    <Content Include="Images\woman.jpg" />
+    <Content Include="Properties\Default.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="DeviceFamily-Mobile\FilterExplorerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FilterExplorerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Editors\RangeEditorTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="BehaviorsXamlSDKManaged, Version=12.0">
+      <Name>Behaviors SDK %28XAML%29</Name>
+    </SDKReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

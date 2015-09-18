@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="ImageSequencer.SequencePreviewPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ImageSequencer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="RootGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="Header" Grid.Row="0" Margin="24">
+            <TextBlock Text="IMAGE SEQUENCER" Style="{ThemeResource TitleTextBlockStyle}"
+                       Typography.Capitals="SmallCaps"/>
+            <TextBlock Text="preview" Style="{ThemeResource HeaderTextBlockStyle}"/>
+        </StackPanel>
+        
+        <Canvas x:Name="Canvas" Grid.Row="1" ManipulationDelta="ImageElement_ManipulationDelta" ManipulationStarted="ImageElement_ManipulationStarted">
+            <Image x:Name="ImageElementBackground"/>
+            <Image x:Name="ImageElement"/>
+            <Border x:Name="AnimatedAreaIndicator" BorderBrush="White" BorderThickness="2" Visibility="Collapsed"/>
+        </Canvas>
+    </Grid>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="playButton" IsEnabled="False" Icon="Pause" Label="Pause" Click="Play_Click"/>
+            <AppBarButton x:Name="alignButton" IsEnabled="False" Label="Align" Click="AlignButton_Click">
+                <AppBarButton.Icon>
+                    <BitmapIcon UriSource="/Assets/appbar.align.disabled.png" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton x:Name="frameButton" IsEnabled="False" Label="Frame" Click="FrameButton_Click">
+                <AppBarButton.Icon>
+                    <BitmapIcon UriSource="/Assets/appbar.frame.disabled.png" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton x:Name="saveButton" IsEnabled="False" Click="SaveButton_Click" Icon="Save" Label="Save"/>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton x:Name="AboutButton" Label="About" Icon="Help" Click="About_Click"/>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>

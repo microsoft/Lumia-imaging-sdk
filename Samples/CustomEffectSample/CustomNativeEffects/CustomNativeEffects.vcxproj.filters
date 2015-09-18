@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>fe529d24-baec-49a9-b597-6efb6fa616aa</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="PixelShaderEffects">
+      <UniqueIdentifier>{cdee65df-0a91-4f50-8ceb-d30921d4e39d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WrappedDirect2DEffects">
+      <UniqueIdentifier>{2a866a49-e847-4610-b6f2-5f4e24a7a744}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CpuEffects">
+      <UniqueIdentifier>{9ea198b8-134d-4323-a01f-32a39a33ce40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extras">
+      <UniqueIdentifier>{817cdb5c-24e1-42fb-8a62-4793a49c526c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PixelShaderEffectsWIthTexture">
+      <UniqueIdentifier>{87d8e1cc-bdc3-44d7-a750-e975e1326ff0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{41dc0022-491f-4654-82f2-02c03a4b08a0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="PixelShaderEffects\MagnifySmoothEffect.cpp">
+      <Filter>PixelShaderEffects</Filter>
+    </ClCompile>
+    <ClCompile Include="PixelShaderEffects\MagnifySmoothEffectDirect2DWorker.cpp">
+      <Filter>PixelShaderEffects</Filter>
+    </ClCompile>
+    <ClCompile Include="WrapDirect2DEffects\Direct2DSaturationEffect.cpp">
+      <Filter>WrappedDirect2DEffects</Filter>
+    </ClCompile>
+    <ClCompile Include="WrapDirect2DEffects\Direct2DSaturationEffectDirect2DWorker.cpp">
+      <Filter>WrappedDirect2DEffects</Filter>
+    </ClCompile>
+    <ClCompile Include="CpuBasedEffects\CustomGrayscaleCpuWorker.cpp">
+      <Filter>CpuEffects</Filter>
+    </ClCompile>
+    <ClCompile Include="CpuBasedEffects\CustomGrayscaleEffect.cpp">
+      <Filter>CpuEffects</Filter>
+    </ClCompile>
+    <ClCompile Include="Extras\CustomEffectCxBuffer.cpp">
+      <Filter>Extras</Filter>
+    </ClCompile>
+    <ClCompile Include="PixelShaderEffectsWithTexture\SplitToneDirect2DWorker.cpp">
+      <Filter>PixelShaderEffectsWIthTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="PixelShaderEffectsWithTexture\SplitToneEffect.cpp">
+      <Filter>PixelShaderEffectsWIthTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="PixelShaderEffectsWithTexture\SplitToneLookups.cpp">
+      <Filter>PixelShaderEffectsWIthTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageProcessingUtils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="PixelShaderEffects\MagnifySmoothEffect.h">
+      <Filter>PixelShaderEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="PixelShaderEffects\MagnifySmoothEffectDirect2DWorker.h">
+      <Filter>PixelShaderEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="WrapDirect2DEffects\Direct2DSaturationEffect.h">
+      <Filter>WrappedDirect2DEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="WrapDirect2DEffects\Direct2DSaturationEffectDirect2DWorker.h">
+      <Filter>WrappedDirect2DEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="CpuBasedEffects\CustomGrayscaleCpuWorker.h">
+      <Filter>CpuEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="CpuBasedEffects\CustomGrayscaleEffect.h">
+      <Filter>CpuEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="Extras\CustomEffectCxBuffer.h">
+      <Filter>Extras</Filter>
+    </ClInclude>
+    <ClInclude Include="PixelShaderEffectsWithTexture\SplitToneDirect2DWorker.h">
+      <Filter>PixelShaderEffectsWIthTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="PixelShaderEffectsWithTexture\SplitToneEffect.h">
+      <Filter>PixelShaderEffectsWIthTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="PixelShaderEffectsWithTexture\SplitToneLookups.h">
+      <Filter>PixelShaderEffectsWIthTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageProcessingUtils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="PixelShaderEffects\MagnifySmooth.hlsl">
+      <Filter>PixelShaderEffects</Filter>
+    </FxCompile>
+    <FxCompile Include="PixelShaderEffectsWithTexture\SplitTonePixelShader.hlsl">
+      <Filter>PixelShaderEffectsWIthTexture</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

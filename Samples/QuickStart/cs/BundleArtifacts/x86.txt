@@ -1,0 +1,1 @@
+MainPackage=C:\Projects\graphics-sdk-ws\imaging-sdk-samples\UAP\QuickStart\bin\x86\Release\QuickStart_1.0.11.3_x86.appx

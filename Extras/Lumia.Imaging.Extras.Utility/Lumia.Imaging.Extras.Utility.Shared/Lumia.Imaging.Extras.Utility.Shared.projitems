@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>496fb6bb-ff5d-4596-b436-e79bd5aac456</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Lumia.Imaging.Extras.Utility.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\BitmapExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\BufferExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ImageProviderExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaybeTask.cs" />
+  </ItemGroup>
+</Project>
