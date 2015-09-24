@@ -67,3 +67,6 @@ Allows adjustments of saturation and lightness around Master, Red, Green, Blue, 
 ####MaybeTask&lt;T&gt;
 Value type that either holds a result **or** a task-of-result. This helps interactive app scenarios, keeping GC activity in check when dealing with mixed sync/async operations, as otherwise each new Task causes a heap allocation.
 
+## Reference
+
+[Lumia Imaging SDK](http://go.microsoft.com/fwlink/?LinkID=521939)

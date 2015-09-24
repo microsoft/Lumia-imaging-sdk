@@ -31,9 +31,9 @@ Specifically, this sample will cover how to:
 
 [Media capture using capture device](https://code.msdn.microsoft.com/windowsapps/Media-Capture-Sample-adf87622)
 
-**Reference**
+## Reference
 
-[Lumia Imaging SDK](https://dev.windows.com/en-us/featured/lumia)
+[Lumia Imaging SDK](http://go.microsoft.com/fwlink/?LinkID=521939)
 
 [Windows.Media.Capture.MediaCapture namespace](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.devices.aspx)
 
@@ -66,7 +66,7 @@ Specifically, this sample will cover how to:
 
 ## Build the sample
 
-1.  Start Visual StudioÂ 2015 and select **File** \> **Open** \> **Project/Solution**.
+1.  Start Visual Studio 2015 and select **File** \> **Open** \> **Project/Solution**.
 2.  Press Ctrl+Shift+B, or select **Build** \> **Build Solution**.
 
 ## Run the sample
@@ -80,9 +80,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 **Deploying and running the sample:**
 
 1.  To debug the sample and then run it, press F5 or select **Debug** \> **Start Debugging**. To run the sample without debugging, press Ctrl+F5 or select **Debug** \> **Start Without Debugging**.
-
-
-License
--------
-See the **license.txt** file delivered with this project
 

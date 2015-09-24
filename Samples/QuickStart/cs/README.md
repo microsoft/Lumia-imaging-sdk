@@ -1,5 +1,5 @@
 Quick Start
-===============
+===========
 
 Quick Start application demonstrates how to create a simple imaging application
 using the Lumia Imaging SDK. It shows how to apply a filter effect to an 
@@ -8,8 +8,7 @@ image and save it to file.
 The example has been developed as a Universal app for Windows 10
 
 
-For more information on implementation, visit  Microsoft Windows Dev Center:
-http://dev.windows.com/en-us/featured/lumia
+For more information on implementation, visit  Microsoft Windows Dev Center: [Lumia Imaging SDK](http://go.microsoft.com/fwlink/?LinkID=521939)
 
 
 1. Usage
@@ -87,17 +86,8 @@ Make sure you have the following installed:
    DEBUG -> Start (Without) Debugging
 
 
-6. License
--------------------------------------------------------------------------------
-
-See the license text file delivered with this project
-
-
-7. Version history
+6. Version history
 -------------------------------------------------------------------------------
 
 * 1.0.0.0: First public release of Quick Start for Windows 10
 
-8. License
--------
-See the **license.txt** file delivered with this project
