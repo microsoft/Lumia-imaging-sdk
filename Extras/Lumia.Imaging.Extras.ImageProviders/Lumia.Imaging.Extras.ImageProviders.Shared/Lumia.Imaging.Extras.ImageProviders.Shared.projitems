@@ -30,5 +30,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)HighpassEffect.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HslAdjustmentEffect.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NoiseImageSource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RepeatedTileImageSource.cs" />
   </ItemGroup>
 </Project>
