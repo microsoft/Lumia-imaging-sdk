@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<WindowsPerformanceRecorder Version="1.0">
+  <Profiles>
+   
+    <!-- Event Collectors -->
+    <EventCollector Id="EventCollector_TraceWpp" Name="TraceWpp Category Event Collector" Private="false" ProcessPrivate="false" Secure="false" Realtime="false">
+      <BufferSize Value="128"/>
+      <Buffers Value="40"/>
+      <MaximumFileSize Value="5" FileMode="Circular"/>
+      <FileMax Value="3"/>
+    </EventCollector>
+
+    <!-- WPP Event Providers -->
+    <EventProvider Id="EventProvider_TraceWpp" Name="7811BC73-7734-4791-B6CF-F32F2E7043FD" Level="5"><Keywords><Keyword Value="0xFF"/></Keywords></EventProvider>
+                
+    <!-- Profiles -->
+    <Profile Id="TraceWppCategory.Verbose.File" LoggingMode="File" Name="TraceWppCategory" DetailLevel="Verbose" Description="TraceWpp category profile">
+      <Collectors>
+            
+        <EventCollectorId Value="EventCollector_TraceWpp">
+          <EventProviders>
+          
+            <!-- WPP Event Providers -->
+            <EventProviderId Value="EventProvider_TraceWpp"/>
+            
+          </EventProviders>
+        </EventCollectorId>
+      </Collectors>
+    </Profile>
+  </Profiles>
+
+</WindowsPerformanceRecorder>
