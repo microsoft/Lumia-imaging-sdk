@@ -23,7 +23,7 @@ Specifically, this sample will cover how to:
 **Samples**
 
 
-[UniversalCameraSample](https://github.com/Microsoft/Windows-universal-samples/tree/master/universalcamerasample)
+[CameraStarterKit](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraStarterKit)
 
 [How to rotate captured video](https://msdn.microsoft.com/en-us/library/windows/apps/hh868174.aspx)
 
@@ -66,7 +66,7 @@ Specifically, this sample will cover how to:
 
 ## Build the sample
 
-1.  Start Visual Studio 2015 and select **File** \> **Open** \> **Project/Solution**.
+1.  Start Visual StudioÂ 2015 and select **File** \> **Open** \> **Project/Solution**.
 2.  Press Ctrl+Shift+B, or select **Build** \> **Build Solution**.
 
 ## Run the sample
